@@ -1,23 +1,21 @@
 // Writing the code logics
 import jobsquad from '../models/jobmodels.js'
+import StatusCodes from 'http-status-codes'
 
 // GET ALL JOBS
 export const getAllJobs = async (req,res)=>{
     // console.log(req)
-    const job = await jobsquad.find({})
+    const job = await jobsquad.find({createdBy: req.user.userId})
+    console.log(req)
     res.status(200).json({job})
 }
 
 // CREATE JOB
 export const createJob = async(req,res)=>{
-    const { company, position } = req.body;
-    try{
-        const job = await jobsquad.create({company:company, position:position})
-        res.status(201).json({ job });
-    }
-    catch(error){
-        res.status(500).json({msg:'Something went wrong'})
-    }
+    req.body.createdBy=req.user.userId;
+    console.log(req)
+    const job = await jobsquad.create(req.body);
+    res.status(StatusCodes.CREATED).json({ job });
 }
 
 // GET SINGLE JOB

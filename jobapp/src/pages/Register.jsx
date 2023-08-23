@@ -1,10 +1,14 @@
-import { Link } from "react-router-dom"
+
+import { Form ,Link} from "react-router-dom"
+
 export default function Register(){
     return(
         <div className="register-comp p-5 position-relative ">
             <section className="form-comp form-row position-absolute landing-main p-3">
                 <h2 className="text-center">Register</h2>
-                <form action="" className="d-flex flex-column align-items-center">
+                
+                
+                <Form method='post' className="d-flex flex-column align-items-center">
                 <div className="d-flex">
                     <div class="form-group p-2 w-100">
                     <label for="exampleInputFName">First Name</label>
@@ -27,9 +31,11 @@ export default function Register(){
                     <label for="exampleInputPassword">Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword"/>
                 </div>
-                <button type="submit" class="btn home-btn w-100 mt-3">Submit</button>
+                <button type="submit" class="btn home-btn w-100 mt-3" onClick={() => {console.log('hello there')}}>
+                    Submit
+                </button>
                 <span className="pt-3">Already a member? <Link to='/login' className="text-decoration-none">Login</Link></span>
-                </form>
+                </Form>
             </section>
         </div>
     )

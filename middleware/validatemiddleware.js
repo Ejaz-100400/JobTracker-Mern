@@ -102,7 +102,6 @@ export const validateUpdateUserInput = withValidationErrors([
         throw new BadRequestError('email already exists');
       }
     }),
-
   body('location').notEmpty().withMessage('location is required'),
   body('lastName').notEmpty().withMessage('last name is required'),
 ]);

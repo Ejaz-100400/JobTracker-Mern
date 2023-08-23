@@ -51,3 +51,12 @@ res.status(StatusCodes.CREATED)
 
 }
 
+
+export const logout = (req, res) => {
+  res.cookie('token', 'token', {
+    httpOnly: true,
+    expires:new Date(Date.now()),
+  });
+  res.status(StatusCodes.OK).json({ msg: 'user logged out' });
+}
+

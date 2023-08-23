@@ -9,6 +9,8 @@ import cookieParser from 'cookie-parser';
 //routers
 import jobRouter from './routes/jobRoutes.js'
 import authRouter from './routes/authRoutes.js'
+import userRouter from './routes/userRoutes.js'
+
 //error middleware
 import errorHandleMiddleware from './middleware/errorhandlemiddleware.js';
 // import { validateJobInput } from './middleware/validatemiddleware.js';
@@ -27,9 +29,14 @@ app.use(cookieParser());
 // });
 
 
+app.get('/api/v1/test', (req, res) => {
+    res.status(200).json({ msg: 'test route' });
+  });
+
 // ROUTER FOR JOBCONTROLLER AND AUTHENTICATOR(jobsquad api)
 app.use('/api/v1/jobs',authenticateUser,jobRouter);
 app.use('/api/v1/auth',authRouter);
+app.use('/api/v1/user',authenticateUser,userRouter);
 
 
 //NOT FOUND MIDDLEWARE

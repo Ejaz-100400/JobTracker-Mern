@@ -3519,6 +3519,7 @@ npm i concurrently@8.0.1
     "client": "cd client && npm run dev",
     "dev": "concurrently --kill-others-on-fail \" npm run server\" \" npm run client\""
   },
+  // "dev": "nodemon server.js",
 ```
 
 By default, when a command fails, concurrently continues running the remaining commands. However, when --kill-others-on-fail is specified, if any of the commands fail, concurrently will immediately terminate all the other running commands.

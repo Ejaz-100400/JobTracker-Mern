@@ -19,4 +19,11 @@ const UserSchema = new mongoose.Schema({
     }
 });
 
+// Setting up user w/o password when getting the current user
+UserSchema.methods.toJSON = function(){
+    let obj = this.toObject();
+    delete obj.password;
+    return obj;
+}
+
 export default mongoose.model('User',UserSchema);

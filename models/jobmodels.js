@@ -27,3 +27,12 @@ const jobsquad = new mongoose.Schema(
 );
 
 export default mongoose.model('jobsquad', jobsquad);
+
+
+// //   "name": "ejaz",
+//   "email": "ejaz11@gmail.com",
+// "password": "ejaz@123",
+
+// "name": "jazir",
+// "email": "jazir11@gmail.com",
+// "password": "jazir@123",

@@ -28,7 +28,7 @@ import {
     };
   };
   
-  export const checkForTestUser = (req, res, next) => {
-    if (req.user.testUser) throw new BadRequestError('Demo User. Read Only!');
-    next();
-  };
+  // export const checkForTestUser = (req, res, next) => {
+  //   if (req.user.testUser) throw new BadRequestError('Demo User. Read Only!');
+  //   next();
+  // };
