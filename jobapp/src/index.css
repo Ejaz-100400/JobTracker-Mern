@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cedarville+Cursive&family=Glegoo&family=Inter:wght@300&family=Lato:wght@300&family=Oswald:wght@300&family=Poppins:wght@200&family=Press+Start+2P&family=Roboto+Slab:wght@200;300&family=Roboto:wght@100&family=Tektur&family=Tilt+Prism&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cedarville+Cursive&family=Glegoo&family=Inter:wght@300&family=Lato:wght@300&family=Oswald:wght@300&family=Poppins:wght@200&family=Press+Start+2P&family=Roboto+Slab:wght@200;300&family=Roboto:wght@100&family=Tektur&family=Tilt+Prism&display=swap');
 *{
   margin:0;
   padding:0;
@@ -10,7 +11,16 @@
   --color3:rgba(225, 234, 234, 0.963);
   --color4:rgba(11, 10, 10, 0.806);
 }
-
+.logo-title{
+  font-family: 'Tilt Prism', cursive;
+  text-shadow: rgba(31, 30, 30, 0.51) 15px -5px 15px;
+  font-size:35px;
+  font-weight: bolder;
+}
+.theme-section{
+  right:30px;
+  top:30px;
+}
 .toast-message {
   background:linear-gradient(-85deg,rgba(39, 205, 227, 0.849),rgb(48, 202, 186),rgb(21, 187, 209)) !important;
   color: #fff !important;
@@ -26,6 +36,9 @@
 nav{
   font-size:1.5rem;
   font-weight:bold;
+}
+.user-btn-container{
+  right:0px;
 }
 .dropdown-section{
   top:50px;
@@ -94,6 +107,7 @@ input{
   width:250px;
   min-height:100vh;
   color:black;
+
   box-shadow: rgba(3, 0, 0, 0.196) 0px 25px 25px;
 }
 .sidebar-small{
@@ -110,11 +124,7 @@ input{
 .fa-sun,.fa-sun{
   cursor: pointer;
 }
-.v-line{
-  border-left:1px solid black;
-  padding:3px;
-  height:30px;
-}
+
 
 @media(max-width:768px){
   .sidebar-big{
@@ -125,6 +135,7 @@ input{
     backdrop-filter:blur(2px);
     background-color: rgba(49, 28, 28, 0.279);
     padding:10px;
+    position:fixed;
   }
   .sidebar-small{
     position:fixed;
@@ -152,7 +163,7 @@ input{
     right:10px;
     top:10px;
     cursor:pointer;
-  }
+  }  
   .fa-bars{
     display:block;
   }
@@ -167,4 +178,58 @@ input{
   }
 }
 
+.dashboard-mainsection-toggler{
+  width:100%;
+  background-color:#44bc80;
+  box-shadow: rgba(3, 0, 0, 0.196) 0px 25px 25px;
+  border-radius: 20px;
+}
+.user-mainpgsection{
+  background-color: antiquewhite;
+  color:black;
+  font-weight:400;
+  position:absolute;
+  right:0px;
+  width:16%;
+  min-height:80vh;
+  margin:75px 0px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  box-shadow: rgba(3, 0, 0, 0.196) 0px 25px 25px;
+}
+/* ALL JOBS */
+.add-job-container{
+  height:250px;
 
+  background-color: #373737;
+  color:white;
+}
+.job-items {
+  overflow-y: scroll;
+  height:300px;
+}
+
+.job-items::-webkit-scrollbar{
+  width:5px;
+  background-color: black;
+}
+
+.job-items::-webkit-scrollbar-thumb{
+  background-color: rgb(117,97,254);
+}
+
+.job-item{
+  width:450px;
+  height:250px;
+  background:linear-gradient(-85deg,rgba(39, 205, 227, 0.849),rgb(48, 202, 186),rgb(21, 187, 209));
+  border-radius:4px;
+  box-shadow: rgba(3, 0, 0, 0.196) 0px 25px 25px;
+}
+
+.pos-title{
+  background-color:#373737;
+  border-radius: 7px;
+}
+.status{
+  border-radius:5px;
+}

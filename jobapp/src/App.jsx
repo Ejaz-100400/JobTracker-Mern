@@ -9,8 +9,9 @@ import
   DashboardLayout,Error,AddJob,Stats,AllJobs,Profile,Admin } from './pages'
 import { action as registeraction } from './pages/Register';
 import{action as loginaction} from './pages/Login';
+import { action as addjobaction } from './pages/AddJob';
 import { loader as dashboardloader } from './pages/DashboardLayout';
-
+import { loader as jobsloader } from './pages/AllJobs';
 const router = createBrowserRouter([
     {
       path:'/',
@@ -38,6 +39,7 @@ const router = createBrowserRouter([
         {
           index:true,
           element:<AllJobs />,
+          loader:jobsloader,
         },
         {
           path: 'stats',
@@ -48,6 +50,7 @@ const router = createBrowserRouter([
           path: 'addjob',
           element: <AddJob />,
           errorElement: <Error />,
+          action: addjobaction
         },
         {
           path: 'profile',

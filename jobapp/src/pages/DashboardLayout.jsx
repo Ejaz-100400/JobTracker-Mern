@@ -5,7 +5,9 @@ import {toast} from 'react-toastify'
 import { Navbar } from "../Components"
 import {BigSidebar} from "../Components"
 import {SmallSidebar} from "../Components"
+import UserMainPg from "../Components/UserMainPg"
 import customFetch from "../utils/customFetch"
+
 
 // Setting up loader and getting the user data 
 export const loader = async () => {
@@ -25,7 +27,7 @@ const DashboardContext = React.createContext();
 export default function DashboardLayout(){
     // Setting up loader using router
     const {user}= useLoaderData();
-    console.log(user);
+    // console.log(user);
     // Setting up navigation for logging out feature
     const navigate = useNavigate();
     const logoutUser = async () => {
@@ -63,13 +65,22 @@ export default function DashboardLayout(){
             ,hide
         }}>
             <div className={theme?'dark-theme d-flex':'light-theme d-flex'}>
-                <SmallSidebar theme={theme} setHide={setHide} hide={hide}/>
-                <BigSidebar theme={theme}/>
-                <div className="w-100">
-                    <Navbar setTheme={setTheme} theme={theme} setHide={setHide} hide={hide}/>
-                    <div className="dashboard-mainsection-toggler p-4">
+                <div className="position-relative">
+                    <BigSidebar theme={theme}/>
+                </div>
+                <div className="dashboard-container d-flex  gap-3">
+                    <div className="theme-section d-flex gap-3 align-items-center position-absolute">
+                        <i className="fa-solid fa-sun" onClick={()=>setTheme()}></i>
+                    </div>
+                    <div className="dashboard-mainsection-toggler p-4 m-5">
                         <Outlet context={user}/>
                     </div>
+                    <UserMainPg/>
+
+                </div>
+                <div className="">
+                    <Navbar setTheme={setTheme} theme={theme} setHide={setHide} hide={hide}/>
+                   
                 </div>
             </div>
         </DashboardContext.Provider>

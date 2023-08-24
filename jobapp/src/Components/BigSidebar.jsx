@@ -2,12 +2,14 @@ import { Link } from "react-router-dom"
 import Logo from './../assets/images/favicon-32x32.png'
 export default function BigSidebar({theme,hideside}){
     return(
-        <div className={`sidebar-big px-3 py-5  flex-column gap-3 ${hideside?'d-none':'d-flex'}`} 
+        <div className={`sidebar-big px-3  flex-column   gap-3  ${hideside?'d-none':'d-flex'}`} 
         style={theme?{backgroundColor:'black',color:'white'}:{backgroundColor:'rgba(225, 238, 234,1)',color:'black'}}>
-             <div className="navbar-logo align-items-center gap-2 py-4">
-                <img src={Logo} alt="" />
-                <span className="logo-title">JobSquad</span>
+            <div className="d-flex flex-column gap-5">
+            <div className="navbar-logo align-items-center gap-2 py-4">
+                <h3 className="logo-title">JobSquad</h3>
             </div>
+            </div>
+            <div>
             <Link className="text-decoration-none d-flex gap-3 align-items-center py-3" to='/dashboard'>
                 <i class="fa-solid fa-file fa-2x"></i>
                 <span>Your Jobs</span>
@@ -24,6 +26,8 @@ export default function BigSidebar({theme,hideside}){
                 <i class="fa-solid fa-id-badge fa-2x"></i>
                 <span>Profile</span>
             </Link>
+            </div>
+            
         </div>
     )
 }
