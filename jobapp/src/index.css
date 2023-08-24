@@ -10,12 +10,26 @@
   --color3:rgba(225, 234, 234, 0.963);
   --color4:rgba(11, 10, 10, 0.806);
 }
+
+.toast-message {
+  background:linear-gradient(-85deg,rgba(39, 205, 227, 0.849),rgb(48, 202, 186),rgb(21, 187, 209)) !important;
+  color: #fff !important;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+  text-align: center !important;
+}
+.Toastify__progress-bar--error{
+  background-color: yellow !important;
+}
 .home-comp{
   background-color: whitesmoke;
 }
 nav{
   font-size:1.5rem;
   font-weight:bold;
+}
+.dropdown-section{
+  top:50px;
+  transition:all 0.5s ease-in;
 }
 .landing-page-main{
   min-height:100vh;
@@ -35,6 +49,10 @@ nav{
   background-color:var(--color1);
   color:white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.home-btn:hover{
+  background-color: var(--color2);
+  color:white;
 }
 
 /* REGISTER PAGE */
@@ -148,3 +166,5 @@ input{
     display:none;
   }
 }
+
+

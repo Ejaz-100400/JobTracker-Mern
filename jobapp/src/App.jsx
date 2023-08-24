@@ -7,6 +7,9 @@ import
   Register,
   Login,
   DashboardLayout,Error,AddJob,Stats,AllJobs,Profile,Admin } from './pages'
+import { action as registeraction } from './pages/Register';
+import{action as loginaction} from './pages/Login';
+import { loader as dashboardloader } from './pages/DashboardLayout';
 
 const router = createBrowserRouter([
     {
@@ -18,19 +21,45 @@ const router = createBrowserRouter([
       path:'login',
       element:<Login/>,
       errorElement:<Error/>,
+      action:loginaction
     },
     {
       path:'register',
       element:<Register/>,
       errorElement:<Error/>,
+      action:registeraction
     },
     {
-      path:'Dashboard',
+      path:'dashboard',
       element:<DashboardLayout/>,
       errorElement:<Error/>,
+      loader:dashboardloader,
+      children:[
+        {
+          index:true,
+          element:<AllJobs />,
+        },
+        {
+          path: 'stats',
+          element: <Stats />,
+          errorElement: <Error />,
+        },
+        {
+          path: 'addjob',
+          element: <AddJob />,
+          errorElement: <Error />,
+        },
+        {
+          path: 'profile',
+          element: <Profile />,
+        },
+        {
+          path: 'admin',
+          element: <Admin />,       },
+      ]
     },
     {
-      path:'Landing',
+      path:'landing',
       element:<Landing/>,
       errorElement:<Error/>,
     }
