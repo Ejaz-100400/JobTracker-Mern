@@ -10,7 +10,7 @@ import StatusCodes from 'http-status-codes'
 export const getCurrentUser = async (req, res) => {
     // const{id}=req.body
     const user = await User.findOne({_id:req.user.userId})
-    console.log(user)
+    // console.log(user)
     // To get user without password
     const userWithoutPassword= user.toJSON()
     res.status(StatusCodes.OK).json({user:userWithoutPassword})
@@ -24,6 +24,6 @@ export const getApplicationStats = async (req,res)=>{
 
 export const updateUser = async (req,res)=>{
     const updatedUser = await User.findByIdAndUpdate(req.user.userId,req.body)
-    console.log(updatedUser);
+    // console.log(updatedUser);
     res.status(StatusCodes.OK).json(updatedUser)
 }

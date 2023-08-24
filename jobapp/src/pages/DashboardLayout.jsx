@@ -30,6 +30,8 @@ export default function DashboardLayout(){
     // console.log(user);
     // Setting up navigation for logging out feature
     const navigate = useNavigate();
+    const[log,setlog]=React.useState(false);
+
     const logoutUser = async () => {
         navigate('/');
         await customFetch.get('/auth/logout');
@@ -37,10 +39,6 @@ export default function DashboardLayout(){
             className:'toast-message'
         });
       };
-
-      
-        
-
 
     // Dark - Light mode
     const[theme,setheme]=React.useState(false)
@@ -51,7 +49,9 @@ export default function DashboardLayout(){
     function setHide(){
         sethide(prev=>!prev)
     }
-
+    function handlelog(){
+        setlog(prev=>!prev)
+    }
     return(
         <>
         <DashboardContext.Provider
@@ -66,21 +66,30 @@ export default function DashboardLayout(){
         }}>
             <div className={theme?'dark-theme d-flex':'light-theme d-flex'}>
                 <div className="position-relative">
+
                     <BigSidebar theme={theme}/>
                 </div>
-                <div className="dashboard-container d-flex  gap-3">
-                    <div className="theme-section d-flex gap-3 align-items-center position-absolute">
+                {/* Theme and Logout section */}
+                <div className="theme-section d-flex gap-3 align-items-center position-absolute">
+                        <button className="home-btn btn d-flex align-items-center gap-2" onClick={()=>handlelog()}>
+                            <i className="fa-solid fa-user"></i>
+                            <span>{user.name}</span>
+                        </button>
+                        <div className="position-absolute log-btn w-75">
+                            <button className="home-btn btn  w-100 justify-content-center gap-2" onClick={logoutUser}
+                            style={{display:log?'flex':'none'}}>
+                                <span className="text-center">Logout</span>
+                            </button>
+                        </div>
+
                         <i className="fa-solid fa-sun" onClick={()=>setTheme()}></i>
                     </div>
-                    <div className="dashboard-mainsection-toggler p-4 m-5">
+                {/* Main Dashboard Section */}
+                <div className="dashboard-container d-flex gap-3 position-relative">  
+                    <div className="dashboard-mainsection-toggler p-2">
                         <Outlet context={user}/>
                     </div>
                     <UserMainPg/>
-
-                </div>
-                <div className="">
-                    <Navbar setTheme={setTheme} theme={theme} setHide={setHide} hide={hide}/>
-                   
                 </div>
             </div>
         </DashboardContext.Provider>

@@ -55,6 +55,6 @@ try{
         console.log(`listening on ${port}`);
     })
 }catch(error){
-    console.log(error);
+    // console.log(error);
     process.exit(1);
 }

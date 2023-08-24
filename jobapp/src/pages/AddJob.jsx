@@ -29,7 +29,7 @@ export default function AddJob(){
     <div className="add-job-container p-3">
         <h1>Add a Job</h1>
         <Form method="post" className="d-flex flex-column justify-content-center align-items-center gap-3">
-            <div className="d-flex align-items-center gap-3">
+            <div className="d-flex align-items-center gap-3 job-form">
                 <FormRow type='text' name='position'/>
                 <FormRow type='text' name='company' />
                 <FormRow type='text' name='jobLocation' />

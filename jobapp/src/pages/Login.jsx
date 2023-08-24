@@ -14,7 +14,7 @@ export const action=async({request}) => {
     return redirect('/dashboard')
     } 
     catch (error) {
-        console.log(error);
+        // console.log(error);
         toast.error(error.response.data.msg,{
             className:'toast-message'
         });

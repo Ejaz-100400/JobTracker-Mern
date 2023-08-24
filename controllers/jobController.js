@@ -6,14 +6,14 @@ import StatusCodes from 'http-status-codes'
 export const getAllJobs = async (req,res)=>{
     // console.log(req)
     const job = await jobsquad.find({createdBy: req.user.userId})
-    console.log(req)
+    // console.log(req)
     res.status(200).json({job})
 }
 
 // CREATE JOB
 export const createJob = async(req,res)=>{
     req.body.createdBy=req.user.userId;
-    console.log(req)
+    // console.log(req)
     const job = await jobsquad.create(req.body);
     res.status(StatusCodes.CREATED).json({ job });
 }

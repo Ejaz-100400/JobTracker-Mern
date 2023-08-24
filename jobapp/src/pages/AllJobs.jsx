@@ -1,3 +1,4 @@
+import React from "react"
 import { FormRow } from "../Components"
 import {JOB_STATUS,JOB_TYPE} from "../../../utils/constants.js"
 import { Form,useNavigation,redirect,useOutletContext,useLoaderData } from "react-router-dom"
@@ -17,15 +18,19 @@ export const loader = async () => {
   };
 
 export default function AllJobs(){
+    const[search,setsearch]=React.useState(false)
     const {data}= useLoaderData();
     console.log(data.job)
     return(
         <>
         
-        <div className="add-job-container p-3">
+        {/* <div className="all-job-container p-3 position-relative" style={search?{height:'300px'}:{height:'100px'}}>
         <h1>Search Job</h1>
-        <Form method="post" className="d-flex flex-column justify-content-center align-items-center gap-3 p-3">
-            <div className="d-flex align-items-center gap-3">
+        <i class="fa-solid fa-magnifying-glass position-absolute" onClick={()=>{setsearch(prev=>!prev)}}></i> */}
+        {/* Search Job Form */}
+        {/* <Form method="post" className=" flex-column justify-content-center align-items-center gap-3 p-3"
+        style={search?{display:'flex'}:{display:'none'}}>
+            <div className="d-flex align-items-center gap-3 alljob-form p-2">
                 <FormRow type='text' name='position'/>
                 <FormRow type='text' name='company' />
                 <FormRow type='text' name='jobLocation' />
@@ -64,8 +69,9 @@ export default function AllJobs(){
                 Submit
             </button>
         </Form>
-    </div>
-    <div className="job-items d-flex gap-2 mt-5 p-2 flex-wrap justify-content-center ">
+    </div> */}
+    {/* Mapping all job items */}
+    <div className="job-items d-flex gap-2 mt-5 p-2 flex-wrap justify-content-center" style={search?{height:'300px'}:{}}>
         {data.job.map((job)=>{
             return(
                 <div className="job-item p-3">
