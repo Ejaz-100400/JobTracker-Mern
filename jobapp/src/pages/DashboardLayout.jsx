@@ -65,7 +65,7 @@ export default function DashboardLayout(){
             ,hide
         }}>
             <div className={theme?'dark-theme d-flex':'light-theme d-flex'}>
-                <div className="position-relative">
+                <div className="position-relative"style={{width: "250px"}}>
 
                     <BigSidebar theme={theme}/>
                 </div>
