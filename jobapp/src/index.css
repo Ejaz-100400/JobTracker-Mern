@@ -49,9 +49,9 @@ nav{
   min-height:100vh;
   font-family: 'Tektur', cursive;
 }
-.landing-content>h1{
+/* .landing-content>h1{
   font-size:52px;
-}
+} */
 .landing-main{
   left:50%;
   top:50%;
@@ -185,7 +185,7 @@ width:30%;
 }
 
 .dashboard-mainsection-toggler{
-  max-width:1000px;
+  width:1000px;
   background-color:#44bc80;
   box-shadow: rgba(3, 0, 0, 0.196) 0px 25px 25px;
   border-radius: 20px;
@@ -237,7 +237,7 @@ width:30%;
 }
 
 .job-item{
-  width:300px;
+  width:40%;
   height:250px;
   background:linear-gradient(-85deg,rgba(39, 205, 227, 0.849),rgb(48, 202, 186),rgb(21, 187, 209));
   border-radius:4px;
@@ -283,5 +283,30 @@ width:30%;
   .job-items {
     height:500px;
     width:380px;
+  }
+  .job-item{
+    width:100%;
+  }
+}
+
+
+/* ADMIN PAGE */
+.admin-item{
+  width:280px;
+  height:200px;
+  background-color: #373737;
+  border-radius: 10px;
+  box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-bottom: 5px solid pink;
+}
+
+.admin-icon{
+  background-color:rgb(64, 132, 201)
+
+}
+
+@media(max-width:567px){
+  .admin-item{
+    width:100%;
   }
 }

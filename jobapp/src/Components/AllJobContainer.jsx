@@ -5,8 +5,8 @@ export default function AllJobContainer(){
     const{jobLength,data}=useAllJobsContext();
     return(
         <>
-        <div className="job-items position-relative mt-5" style={{ overflowY: jobLength <=3 ? 'none' : 'scroll' }}>
-        <div className="d-flex flex-wrap gap-3 justify-content-center align-items-center mt-3">
+        <div className="job-items position-relative mt-2" style={{ overflowY: jobLength ===2 ? 'none' : 'scroll' }}>
+        <div className="d-flex flex-wrap gap-3 justify-content-between align-items-center mt-3 m-3">
         {data.job.length===0?
         <span>No Jobs to display ... :(
         </span>:data.job.map((job)=>{

@@ -67,7 +67,7 @@ export default function DashboardLayout(){
             <div className={theme?'dark-theme d-flex':'light-theme d-flex'}>
                 <div className="position-relative"style={{width: "250px"}}>
 
-                    <BigSidebar theme={theme}/>
+                    <BigSidebar  user={user}/>
                 </div>
                 {/* Theme and Logout section */}
                 <div className="theme-section d-flex gap-3 align-items-center position-absolute">

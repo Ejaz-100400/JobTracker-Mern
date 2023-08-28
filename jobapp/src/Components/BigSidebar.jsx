@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import Logo from './../assets/images/favicon-32x32.png'
-export default function BigSidebar({theme,hideside}){
+export default function BigSidebar({theme,user}){
+    const {role}=user;
     return(
         <div className={`sidebar-big px-3  flex-column position-fixed gap-3`} 
         style={theme?{backgroundColor:'black',color:'white'}:{backgroundColor:'rgba(225, 238, 234,1)',color:'black'}}>
@@ -26,6 +27,11 @@ export default function BigSidebar({theme,hideside}){
                 <i class="fa-solid fa-id-badge fa-2x"></i>
                 <span>Profile</span>
             </Link>
+            {role === 'admin'?<Link className="text-decoration-none d-flex gap-3 align-items-center py-3" to='/dashboard/admin'>
+                <i class="fa-solid fa-shield-halved fa-2x"></i>
+                <span>Admin</span>
+            </Link>:null}
+            
             </div>
             
         </div>

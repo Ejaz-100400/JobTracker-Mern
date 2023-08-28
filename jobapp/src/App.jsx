@@ -7,6 +7,7 @@ import
   Register,
   Login,
   DashboardLayout,Error,AddJob,Stats,AllJobs,Profile,Admin,EditJob } from './pages'
+
 import { action as registeraction } from './pages/Register';
 import{action as loginaction} from './pages/Login';
 import { action as addjobaction } from './pages/AddJob';
@@ -16,6 +17,9 @@ import { action as deletejobaction } from './pages/DeleteJob';
 import { loader as dashboardloader } from './pages/DashboardLayout';
 import { loader as editjobloader } from './pages/EditJob';
 import { loader as jobsloader } from './pages/AllJobs';
+import { loader as adminloader } from './pages/Admin';
+
+
 const router = createBrowserRouter([
     {
       path:'/',
@@ -72,7 +76,9 @@ const router = createBrowserRouter([
         },
         {
           path: 'admin',
-          element: <Admin />,       },
+          element: <Admin />,
+          loader:adminloader,
+        },
       ]
     },
     {
