@@ -52,7 +52,7 @@ app.use('/api/v1/user',authenticateUser,userRouter);
 
 app.get('*', (req, res) => {
     // res.sendFile(path.resolve(__dirname, './jobapp/dist', 'index.html'));
-    res.sendFile('./jobapp/dist/index.html')
+    res.sendFile(__dirname + '/jobapp/dist/index.html')
   });
 
 //NOT FOUND MIDDLEWARE
