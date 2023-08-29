@@ -16,6 +16,7 @@ export default function Admin(){
     const {users,jobs}=useLoaderData()
 
     return(
+        <>
         <div className="admin-container d-flex gap-3 px-2 py-3 flex-wrap">
             <div className="admin-item d-flex flex-column gap-3 p-4 justify-content-center">
                 <div className="d-flex justify-content-between align-items-center fa-2x">
@@ -32,5 +33,6 @@ export default function Admin(){
                 <h4>Total Jobs</h4>
             </div>
         </div>
+        </>
     )
 }

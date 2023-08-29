@@ -16,7 +16,17 @@ import errorHandleMiddleware from './middleware/errorhandlemiddleware.js';
 // import { validateJobInput } from './middleware/validatemiddleware.js';
 import {authenticateUser} from './middleware/authMiddleware.js';
 
+// public
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import path from 'path';
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
+
+app.use(express.static(path.resolve(__dirname, './jobapp/dist')));
 app.use(express.json());
 app.use(morgan('dev'))
 app.use(cookieParser());
@@ -38,13 +48,16 @@ app.use('/api/v1/jobs',authenticateUser,jobRouter);
 app.use('/api/v1/auth',authRouter);
 app.use('/api/v1/user',authenticateUser,userRouter);
 
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './jobapp/dist', 'index.html'));
+  });
 
 //NOT FOUND MIDDLEWARE
 app.use(errorHandleMiddleware);
 
-// if(process.env.NODE_ENV === 'production'){
-//     app.use(morgan('dev'))
-// }
+if(process.env.NODE_ENV === 'production'){
+    app.use(morgan('dev'))
+}
 
 const port = process.env.PORT || 5100
 

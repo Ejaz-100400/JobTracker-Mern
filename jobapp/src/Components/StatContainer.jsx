@@ -1,7 +1,7 @@
 export default function StatContainer({defaultStats}){
     console.log(defaultStats);
     return(
-        <div className="admin-container d-flex gap-3 px-2 py-3 flex-wrap justify-content-center bg-">
+        <div className="admin-container d-flex gap-3 px-2 py-3 flex-wrap justify-content-center flex-wrap" id="stat-container">
             <div className="admin-item d-flex flex-column gap-3 p-4 justify-content-center">
                 <div className="d-flex justify-content-between align-items-center fa-2x">
                     <h1 className="text-warning">{defaultStats.pending}</h1>

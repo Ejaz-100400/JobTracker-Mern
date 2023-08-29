@@ -17,14 +17,18 @@ export const loader = async ()=>{
 
 export default function Stats(){
     const {defaultStats,monthlyApplications}=useLoaderData()
+    let container =<>
+    <StatsContainer defaultStats={defaultStats}/> 
+    <ChartContainer data={monthlyApplications} />
+    </>
+
+    
 
     return(
-        <div className='d-flex flex-column justify-content-center'>
-            <StatsContainer defaultStats={defaultStats}/>
-            {
-                monthlyApplications.length>0 &&
-                <ChartContainer data={monthlyApplications} />
-            }
+        <div className={`d-flex flex-column justify-content-center p-2 h-100 
+        ${monthlyApplications.length===0?'align-items-center':''}`} >
+            {monthlyApplications.length===0?<span>To check stats,add more jobs..</span>:container}
+           
         </div>
     )
 }

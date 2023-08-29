@@ -310,3 +310,24 @@ width:30%;
     width:100%;
   }
 }
+
+/* STATS SECTION */
+.chart-btn{
+  font-size: larger;
+}
+
+@media(max-width:768px){
+  #stat-container{
+    overflow-y: scroll;
+    height:240px;
+  }
+  #stat-container::-webkit-scrollbar{
+    width:5px;
+    background-color: black;
+  }
+  
+  #stat-container::-webkit-scrollbar-thumb{
+    background-color: rgb(117,97,254);
+  }
+
+}
