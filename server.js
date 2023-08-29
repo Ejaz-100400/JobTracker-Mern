@@ -39,6 +39,11 @@ app.use(cookieParser());
 // });
 
 
+app.get('/', (req, res) => {
+    res.send('Hello World');
+  });
+
+
 app.get('/api/v1/test', (req, res) => {
     res.status(200).json({ msg: 'test route' });
   });
@@ -55,9 +60,7 @@ app.get('*', (req, res) => {
 //NOT FOUND MIDDLEWARE
 app.use(errorHandleMiddleware);
 
-if(process.env.NODE_ENV === 'production'){
-    app.use(morgan('dev'))
-}
+
 
 const port = process.env.PORT || 5100
 
