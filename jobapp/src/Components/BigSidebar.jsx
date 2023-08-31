@@ -11,23 +11,23 @@ export default function BigSidebar({theme,user}){
             </div>
             </div>
             <div>
-            <Link className="text-decoration-none d-flex gap-3 align-items-center py-3" to='/dashboard'>
+            <Link className="text-decoration-none d-flex gap-3 align-items-center py-3 page-link" to='/dashboard'>
                 <i class="fa-solid fa-file fa-2x"></i>
                 <span>Your Jobs</span>
             </Link>
-            <Link className="text-decoration-none d-flex gap-3 align-items-center py-3" to='/dashboard/addjob'>
+            <Link className="text-decoration-none d-flex gap-3 align-items-center py-3 page-link" to='/dashboard/addjob'>
                 <i class="fa-solid fa-plus fa-2x"></i>
                 <span>Add Jobs</span>
             </Link>
-            <Link className="text-decoration-none d-flex gap-3 align-items-center py-3" to='/dashboard/stats'>
+            <Link className="text-decoration-none d-flex gap-3 align-items-center py-3 page-link" to='/dashboard/stats'>
                 <i class="fa-solid fa-chart-simple fa-2x"></i>
                 <span>Stats</span>
             </Link>
-            <Link className="text-decoration-none d-flex gap-3 align-items-center py-3" to='/dashboard/profile'>
+            {/* <Link className="text-decoration-none d-flex gap-3 align-items-center py-3 page-link" to='/dashboard/profile'>
                 <i class="fa-solid fa-id-badge fa-2x"></i>
                 <span>Profile</span>
-            </Link>
-            {role === 'admin'?<Link className="text-decoration-none d-flex gap-3 align-items-center py-3" to='/dashboard/admin'>
+            </Link> */}
+            {role === 'admin'?<Link className="text-decoration-none d-flex gap-3 align-items-center py-3 page-link" to='/dashboard/admin'>
                 <i class="fa-solid fa-shield-halved fa-2x"></i>
                 <span>Admin</span>
             </Link>:null}

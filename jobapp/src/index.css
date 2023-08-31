@@ -102,8 +102,17 @@ width:30%;
   min-height: 100vh;
   color:white;
 }
+.dark-theme{
+  background: linear-gradient(0deg, rgb(32, 29, 49) 0%, rgb(27, 24, 49) 54%, rgb(46, 39, 91) 100%);
+  min-height: 100vh;
+  color:black;
+
+}
 .dashboard-mainsection-toggler{
   margin:60px;
+}
+.page-link{
+  color:rgb(117,97,254);
 }
 .sidebar-big{
   background-color: var(--color3);
