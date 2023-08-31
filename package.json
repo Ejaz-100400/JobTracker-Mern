@@ -24,7 +24,7 @@
     "setup-project": "npm i && cd jobapp && npm i",
     "setup-production-app": "npm i && cd jobapp && npm i && npm run build ",
     "server": "nodemon server",
-    "client": "npm run dev",
+    "client": "cd jobapp && npm run dev",
     "dev": "concurrently --kill-others-on-fail \" npm run server\" \" npm run client\""
   }
 }
