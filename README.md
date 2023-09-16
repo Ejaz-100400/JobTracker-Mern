@@ -8,7 +8,6 @@ JobTrack is a web application for tracking and managing job applications. This M
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
 - [Uses](#uses)
 - [Installation](#installation)
 
