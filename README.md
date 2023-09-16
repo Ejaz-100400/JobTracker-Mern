@@ -9,8 +9,8 @@ JobTrack is a web application for tracking and managing job applications. This M
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
+- [Uses](#uses)
 - [Installation](#installation)
-- [Screenshots](#screenshots)
 
 ## Features
 - User registration and authentication.
@@ -25,6 +25,15 @@ JobTrack is a web application for tracking and managing job applications. This M
 - React: Frontend library for creating the user interface.
 - Node.js: Runtime environment for the server.
 - Axios: Provides a simple and consistent API to interact with RESTful APIs, perform asynchronous operations, and handle responses.
+
+## Uses
+- **Job Listing:** Keep track of job listings from various sources.
+- **Application Management:** Record application deadlines, status, and submission details.
+- **Resume Organizer:** Store and manage different versions of your resume.
+- **Interview Scheduler:** Schedule and manage interviews and follow-ups.
+- **Data Insights:** Visualize your job search progress with charts and statistics.
+- **Deadline Reminders:** Set reminders to stay on top of application deadlines.
+- **Secure and Private:** Protect your job search data with user authentication.
 
 ### Installation
 1. Clone the repository:
